@@ -1,7 +1,9 @@
 # MeanCourse
 
 Angular & NodeJS - The MEAN Stack Guide [2020 Edition]
+
 Learn how to connect your Angular Frontend to a NodeJS & Express & MongoDB Backend by building a real Application
+
 Course made by Maximilian Schwarzmüller
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
