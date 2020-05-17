@@ -3,14 +3,15 @@
 -->
 <mat-card>
   <!-- Template driven by Angular Forms -->
-  <form #postForm="ngForm" (submit)="onAddPost(postForm)">
+  <mat-spinner *ngIf='isLoading'></mat-spinner>
+  <form #postForm="ngForm" (submit)="onSavePost(postForm)" *ngIf='!isLoading'>
     <mat-form-field>
-      <input #title="ngModel" matInput type="text" ngModel name="title" required placeholder=" Post Title" minlength="3"/>
+      <input #title="ngModel" matInput type="text" [ngModel]="post?.title" name="title" required placeholder=" Post Title" minlength="3"/>
       <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error>
       <!-- <input matInput type="text" [(ngModel)]="enteredTitle"> --> <!-- directive two way biding -->
     </mat-form-field>
     <mat-form-field>
-      <textarea #content="ngModel" matInput rows="4" ngModel name="content" required placeholder="Post Content"></textarea> <!-- directive two way biding -->
+      <textarea #content="ngModel" matInput rows="4" [ngModel]="post?.content" name="content" required placeholder="Post Content"></textarea> <!-- directive two way biding -->
       <mat-error *ngIf="content.invalid">Please enter a post content.</mat-error>
     </mat-form-field>
     <button mat-raised-button color="accent" type="submit">Save post</button>
